@@ -20,17 +20,28 @@ public class Main extends Application {
     static HashSet<Customer> customers = new HashSet<Customer>();
 
 
+    public static void main(String[] args) throws Exception {
+
+        m = new Main();
 
 
-    public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("Hello!");
-        stage.setScene(scene);
-        stage.show();
+        launch(args);
     }
 
-    public static void main(String[] args) {
-        launch();
+    @Override
+    public void start(Stage primaryStage) throws IOException {
+        try {
+            root = FXMLLoader.load(getClass().getResource("loginScene.fxml"));
+            Main.primaryStage = primaryStage;
+            Scene scene = new Scene(root, 320, 240);
+            primaryStage.setTitle("Minigolf Booking System");
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
+
+
 }
