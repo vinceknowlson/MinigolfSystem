@@ -19,6 +19,18 @@ public class Main extends Application {
     static HashSet<Employee> employees = new HashSet<Employee>();
     static HashSet<Customer> customers = new HashSet<Customer>();
 
+    static Parent getRoot(){
+        return root;
+    }
+
+    static Stage getStage(){
+        return primaryStage;
+    }
+
+    static void setRoot(Parent root){
+        Main.root=root;
+    }
+
 
     public static void main(String[] args) throws Exception {
 
